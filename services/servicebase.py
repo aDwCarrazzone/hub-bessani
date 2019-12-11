@@ -10,8 +10,10 @@ class ServiceBase:
         try:
             endpoint = str(useCase.meliApi.api['endpoint'])            
             site_id  = str(useCase.meliApi.api['site_id'])
+            limit    = str(useCase.meliApi.consumer['product_limit'])
             routeApi = routeApi.replace("${ENDPOINT}", endpoint)
             routeApi = routeApi.replace("${SITE_ID}", site_id)
+            routeApi = routeApi.replace("${LIMIT}", limit)
 
             #######################################
             # verifica se existe query para ser 
